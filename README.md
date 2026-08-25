@@ -57,36 +57,62 @@ Each agent folder contains an `agent.py` and `__init__.py`. Every standalone spe
 
 ## Requirements
 
+- Python 3.10 or newer
+- Internet access for Gemini API requests
+- A Google Gemini API key
 
-The project currently uses:
+The project uses:
 
 ```text
 gemini-2.5-flash
 ```
 
-## Configuration
+## Setup
 
-Create or update `.env` in the project root:
+Run these commands from the project root. If you downloaded the project from
+Git, first enter the project directory:
+
+```bash
+cd "/path/to/Travel Planner"
+```
+
+Create a virtual environment:
+
+```bash
+python3 -m venv .venv
+```
+
+Activate it on macOS or Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Activate it on Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Install the dependency:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install google-adk
+```
+
+Create a `.env` file in the project root and add your API key:
 
 ```env
 GOOGLE_API_KEY="your-google-api-key"
 ```
 
-Keep the API key private. Do not commit `.env` to source control.
+Keep the API key private. `.env` is excluded by `.gitignore`.
 
-## Installation
-
-If the virtual environment already exists:
+When you finish, leave the virtual environment with:
 
 ```bash
-cd "/Users/gopinathr/Travel Planner"
-source .venv/bin/activate
-```
-
-If ADK is not installed yet:
-
-```bash
-pip install google-adk
+deactivate
 ```
 
 ## Run the complete workflow in the browser

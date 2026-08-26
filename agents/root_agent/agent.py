@@ -1,16 +1,16 @@
-from google.adk.agents import Agent, ParallelAgent, SequentialAgent
 try:
-    from ..accommodation_agent.agent import create_accommodation_agent
-    from ..budget_agent.agent import create_budget_agent
-    from ..destination_agent.agent import create_destination_agent
-    from ..itinerary_agent.agent import create_itinerary_agent
-    from ..transportation_agent.agent import create_transportation_agent
-except ImportError:
+    from accommodation_agent.agent import create_accommodation_agent
+    from budget_agent.agent import create_budget_agent
+    from destination_agent.agent import create_destination_agent
+    from itinerary_agent.agent import create_itinerary_agent
+    from transportation_agent.agent import create_transportation_agent
+except ModuleNotFoundError:
     from agents.accommodation_agent.agent import create_accommodation_agent
     from agents.budget_agent.agent import create_budget_agent
     from agents.destination_agent.agent import create_destination_agent
     from agents.itinerary_agent.agent import create_itinerary_agent
     from agents.transportation_agent.agent import create_transportation_agent
+from google.adk.agents import Agent, ParallelAgent, SequentialAgent
 
 
 MODEL = "gemini-2.5-flash"
